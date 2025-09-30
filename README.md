@@ -53,7 +53,7 @@ This project is ideal for developers building hybrid mobile/web AI chatbots, wit
 ### Steps
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/mgz-on-ai-assistant.git
+   git clone https://github.com/mark-lasfar/ofline-chat.git
    cd mgz-on-ai-assistant
    ```
 
@@ -130,4 +130,4 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 
 
-For questions, open an issue or contact [hadad@linuxmail.org](mailto:hadad@linuxmail.org).
+For questions, open an issue or contact [marklasfar@gmail.com](mailto:hadad@linuxmail.org).

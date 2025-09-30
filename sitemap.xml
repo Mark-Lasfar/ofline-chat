@@ -1,51 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/chat</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/chat.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/about</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/about.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/login</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/login.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/register</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/register.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-  <loc>https://mgzon-mgzon-app.hf.space/blog/mgzon-ai-revolution-2025</loc>
-  <lastmod>2025-09-01</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
-</url>
-  <url>
-    <loc>https://mgzon-mgzon-app.hf.space/docs</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/docs.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mgzon-mgzon-app.hf.space/blog</loc>
+    <loc>https://mark-lasfar.github.io/ofline-chat/blog.html</loc>
     <lastmod>2025-09-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
+
+
+  <url>
+    <loc>https://mark-lasfar.github.io/ofline-chat/blog/1.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mark-lasfar.github.io/ofline-chat/blog/2.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mark-lasfar.github.io/ofline-chat/blog/3.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mark-lasfar.github.io/ofline-chat/blog/4.html</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
+

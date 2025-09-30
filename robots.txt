@@ -1,17 +1,19 @@
 User-agent: *
 Allow: /
-Disallow: /utils/
-Disallow: /api/
-Disallow: /main.py
-Disallow: /mgzon_users.db
-Disallow: /data/
-Disallow: /Dockerfile
-Disallow: /space.yaml
-Disallow: /requirements.txt
-Allow: /static/robots.txt
-Allow: /static/sitemap.xml
-Allow: /static/google97468ef1f6b6e804.html
-Allow: /static/favicon.ico
-Allow: /static/css/
-Allow: /static/js/
-Sitemap: https://mgzon-mgzon-app.hf.space/static/sitemap.xml
+
+# Explicitly allow access to important static files
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /google97468ef1f6b6e804.html
+Allow: /favicon.ico
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /espeak/
+Allow: /mespeak/
+Allow: /onnxruntime/
+Allow: /tts/
+
+# Sitemap location
+Sitemap: https://mark-lasfar.github.io/ofline-chat/sitemap.xml
+

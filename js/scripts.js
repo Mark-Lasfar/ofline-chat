@@ -17,7 +17,7 @@ document.getElementById('chatbot-link')?.addEventListener('click', (e) => {
     btn.disabled = true;
     setTimeout(() => {
         window.location.href = '/gradio';
-    }, 1000); // تأخير بسيط عشان الـ animation
+    }, 1000); 
 });
 
 // Card animations
@@ -46,10 +46,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-App.addListener('appUrlOpen', (event) => {
-  if (event.url.endsWith('/')) {
-    window.location.href = 'chat.html';
-  }
-});

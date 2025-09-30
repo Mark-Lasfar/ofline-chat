@@ -1,0 +1,28 @@
+{
+  "appId": "com.mgzon.app",
+  "appName": "mgzon-app",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    },
+    "Browser": {
+     "enabled": true
+    },
+    "VoiceRecorder": {
+      "enabled": true
+    },
+    "LocalNotifications": {
+      "sound": "default",
+      "smallIcon": "ic_stat_onesignal_default",
+      "iconColor": "#FF0000"
+    },
+    "Preferences": {
+      "enabled": true
+    },
+    "Filesystem": {
+      "enabled": true
+    }
+  }
+}

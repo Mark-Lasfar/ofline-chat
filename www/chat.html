@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description"
+    content="Chat with MGZon Chatbot, an AI-powered tool for coding, analysis, and e-commerce queries. Supports text, image, and audio inputs." />
+  <meta name="keywords"
+    content="MGZon Chatbot, AI chatbot, code generation, DeepSeek, Gradio, FastAPI, e-commerce, programming, Mark Al-Asfar" />
+  <meta name="author" content="Mark Al-Asfar" />
+  <meta name="robots" content="index, follow" />
+  <title>MGZon Chatbot – AI Assistant</title>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="images/mg.svg" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="MGZon Chatbot – AI Assistant" />
+  <!-- iOS Web App Support -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/mg-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MGZon">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- General Theme -->
+  <meta name="theme-color" content="#2d3748">
+  <meta property="og:description"
+    content="Chat with MGZon Chatbot for coding, analysis, and e-commerce queries with text, image, and audio support." />
+  <meta property="og:image" content="images/mg.svg" />
+  <meta property="og:url" content="https://mgzon-mgzon-app.hf.space/chat" />
+  <meta property="og:type" content="website" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MGZon Chatbot – AI Assistant" />
+  <meta name="twitter:description"
+    content="Chat with MGZon Chatbot for coding, analysis, and e-commerce queries with text, image, and audio support." />
+  <meta name="twitter:image" content="images/mg.svg" />
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MGZon Chatbot",
+    "url": "https://mgzon-mgzon-app.hf.space/chat",
+    "description": "An AI-powered chatbot for coding, analysis, and e-commerce queries."
+  }
+  </script>
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+  <!-- Markdown & Syntax Highlight -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <!-- Animations --><script src="https://unpkg.com/libav.js@4.8.4/libav-4.8.4-web.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+  <!-- Smooth Scroll -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" /> -->
+  <!-- Project-Specific Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Preload Resources -->
+  <link rel="preload" href="js/chat.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="images/mg.svg" as="image" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+</head>
+
+<body class="min-h-screen flex flex-col">
+<div id="particles-js"></div>
+<button class="theme-toggle" onclick="toggleTheme()">
+  <span class="theme-icon">🌙</span>
+</button>
+  <!-- Sidebar -->
+  <aside id="sidebar"
+    class="fixed inset-y-0 left-0 w-80 bg-gray-800/90 backdrop-blur-md transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex items-center justify-between p-4 border-b border-gray-700">
+      <div class="flex items-center">
+        <img src="images/mg.svg" alt="MGZon Logo" class="w-10 h-10 mr-2 animate-pulse" />
+        <h2 class="text-lg font-bold text-white">MGZon</h2>
+      </div>
+      <button id="sidebarToggle" class="text-white" aria-label="Close Sidebar">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li>
+          <a href="/" class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 11.5L12 4l9 7.5M5 21V11.5h14V21"></path>
+            </svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            About
+          </a>
+        </li>
+        <li>
+          <a href="blog.html" class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 006 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25">
+              </path>
+            </svg>
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="docs.html" class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+              </path>
+            </svg>
+            Docs
+          </a>
+        </li>
+        <li id="settingsLi" style="display: none;">
+          <button id="settingsBtn"
+            class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors w-full text-left">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+              </path>
+            </svg>
+            Settings
+          </button>
+        </li>
+        <li id="logoutLi" style="display: none;">
+          <button id="logoutBtn"
+            class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors w-full text-left">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            Logout
+          </button>
+        </li>
+        <li id="loginLi">
+          <a href="login.html" class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+            </svg>
+            Login
+          </a>
+        </li>
+      </ul>
+      <div id="conversationsSection" class="mt-4" style="display: none;">
+        <div class="flex justify-between items-center px-2 mb-2">
+          <h3 class="text-sm font-semibold text-white">Conversations</h3>
+          <button id="newConversationBtn" class="text-white hover:bg-gray-700 p-1 rounded" title="New Conversation">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+          </button>
+        </div>
+        <button id="historyToggle"
+          class="flex items-center text-white hover:bg-gray-700 p-2 rounded transition-colors w-full text-left">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Show History
+        </button>
+        <ul id="conversationList" class="space-y-2 max-h-[calc(100vh-300px)] overflow-y-auto hidden">
+          <!-- Conversations will be populated by JavaScript -->
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Swipe Hint for Mobile -->
+<div id="swipeHint" class="fixed top-1/2 left-4 z-50 swipe-animation">
+  <img src="images/swipe-hint.svg" alt="Swipe to open sidebar" class="w-8 h-8" />
+</div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col max-w-screen-xl w-full mx-auto">
+    <!-- Chat Header -->
+    <header class="chat-header">
+  <div class="chat-title">
+    <span id="conversationTitle">MGZon AI Assistant</span>
+  </div>
+  <div class="chat-controls flex gap-2">
+    <button id="clearBtn" class="icon-btn" aria-label="Clear All Messages" title="Clear All Messages">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 6h18" />
+        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+        <path d="M10 11v6" />
+        <path d="M14 11v6" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+    <!-- Chat Area -->
+    <main class="flex-1 flex flex-col">
+      <div id="initialContent" class="flex flex-col items-center justify-center text-center h-full">
+        <div class="title mb-4 gradient-text text-3xl font-bold">
+          How can I help you today?
+        </div>
+        <p class="system text-gray-300 mb-4">
+          A versatile chatbot powered by DeepSeek, GPT-OSS, CLIP, Whisper, and TTS.<br>
+          Type your query, upload images/files, or hold the send button to record audio!
+        </p>
+        <!-- Prompts -->
+        <div class="prompts w-full max-w-md mx-auto grid gap-2">
+          <div class="prompt-item" data-prompt="What's the capital of France?">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M18.66 18.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M18.66 5.34l1.41-1.41"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="4" stroke-width="2" />
+            </svg>
+            <span>What's the capital of France?</span>
+          </div>
+          <div class="prompt-item" data-prompt="Generate a Python script for a simple web server">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Generate a Python script for a simple web server</span>
+          </div>
+          <div class="prompt-item" data-prompt="Analyze this image for me">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 12h18M12 3v18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Analyze this image for me</span>
+          </div>
+          <div class="prompt-item" data-prompt="Convert this text to audio">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 3v18M7 12h10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Convert this text to audio</span>
+          </div>
+        </div>
+        <div id="messageLimitWarning" class="text-red-500 text-center hidden mt-4">
+          You have reached the message limit. Please <a href="login.html" class="text-blue-300 underline">login</a> to
+          continue.
+        </div>
+      </div>
+      <div id="chatArea" class="flex-1 overflow-y-auto" aria-live="polite">
+        <div id="chatBox" class="flex flex-col w-full" dir="auto" aria-live="polite"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer Form -->
+  <form id="footerForm" class="flex p-4 w-full sticky bottom-0 z-50">
+    <div id="inputContainer" class="w-full">
+      <textarea id="userInput" placeholder="Ask anything..." required></textarea>
+      <div id="rightIconGroup" class="flex gap-2">
+        <button type="button" id="fileBtn" class="icon-btn" aria-label="Upload File" title="Upload File">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <path d="M14 2v6h6" />
+          </svg>
+        </button>
+        <input type="file" id="fileInput" accept="image/*,.mp3,.wav" style="display: none;" />
+        <button type="button" id="audioBtn" class="icon-btn" aria-label="Upload Audio File" title="Upload Audio File">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+            <path d="M12 19v4" />
+          </svg>
+        </button>
+        <input type="file" id="audioInput" accept="audio/*" style="display: none;" />
+        <button type="submit" id="sendBtn" class="icon-btn" disabled aria-label="Send or Hold to Record"
+          title="Click to Send or Hold to Record Voice">
+          <svg id="sendIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M3 12h11" />
+          </svg>
+        </button>
+        <button id="stopBtn" class="icon-btn" aria-label="Stop" title="Stop" style="display: none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="12" height="12" rx="2" fill="white" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="filePreview" class="upload-preview" style="display: none;"></div>
+    <div id="audioPreview" class="audio-preview" style="display: none;"></div>
+  </form>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-gray-800 p-6 rounded-lg w-full max-w-md">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-white">User Settings</h2>
+<button type="button" id="cancelSettingsBtn" class="px-4 py-2 bg-gray-600 text-white rounded">Cancel</button>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <form id="settingsForm" class="space-y-4">
+        <div>
+          <label for="display_name" class="block text-sm text-gray-300">Display Name</label>
+          <input type="text" id="display_name" name="display_name" class="w-full p-2 bg-gray-700 text-white rounded">
+        </div>
+        <div>
+          <label for="preferred_model" class="block text-sm text-gray-300">Preferred Model</label>
+          <select id="preferred_model" name="preferred_model" class="w-full p-2 bg-gray-700 text-white rounded">
+            <option value="">Default</option>
+            <option value="advanced">Advanced (High-performance)</option>
+            <option value="standard">Standard (Balanced)</option>
+            <option value="light">Light (Quick)</option>
+          </select>
+        </div>
+        <div>
+          <label for="job_title" class="block text-sm text-gray-300">Job Title</label>
+          <input type="text" id="job_title" name="job_title" class="w-full p-2 bg-gray-700 text-white rounded">
+        </div>
+        <div>
+          <label for="education" class="block text-sm text-gray-300">Education</label>
+          <input type="text" id="education" name="education" class="w-full p-2 bg-gray-700 text-white rounded">
+        </div>
+        <div>
+          <label for="interests" class="block text-sm text-gray-300">Interests</label>
+          <textarea id="interests" name="interests" class="w-full p-2 bg-gray-700 text-white rounded"></textarea>
+        </div>
+        <div>
+          <label for="additional_info" class="block text-sm text-gray-300">Additional Info</label>
+          <textarea id="additional_info" name="additional_info"
+            class="w-full p-2 bg-gray-700 text-white rounded"></textarea>
+        </div>
+        <div>
+          <label for="conversation_style" class="block text-sm text-gray-300">Conversation Style</label>
+          <select id="conversation_style" name="conversation_style" class="w-full p-2 bg-gray-700 text-white rounded">
+            <option value="default">Default</option>
+            <option value="concise">Concise</option>
+            <option value="analytical">Analytical</option>
+            <option value="creative">Creative</option>
+          </select>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button type="button" id="closeSettingsBtn" class="px-4 py-2 bg-gray-600 text-white rounded">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-xs text-gray-400 py-2">
+    © 2025 Mark Al-Asfar & MGZon AI. All rights reserved.
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/audio-decode@2.2.3/dist/audio-decode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/dist/transformers.min.js"></script>
+  <script src="js/hammer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+  <script type="module" src="js/chat.js"></script>
+
+
+  <!--   <script src="js/chat.js"></script>  -->
+  
+	<!-- <script src="js/ort.min.js"></script> -->
+  <!-- Inline Script for Dynamic UI -->
+  
+
+  <script>
+    // Particles.js initialization
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: ['#00f0ff', '#ff007a', '#6b21a8'] },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: { enable: true, distance: 150, color: '#00f0ff', opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 3, direction: 'none', random: true }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+            modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+    });
+
+    function toggleTheme() {
+        const html = document.documentElement;
+        const button = document.querySelector('.theme-toggle');
+        if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            button.textContent = '☀️';
+        } else {
+            html.classList.remove('light');
+            html.classList.add('dark');
+            button.textContent = '🌙';
+        }
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+/*
+ * SPDX-FileCopyrightText: Hadad <hadad@linuxmail.org>
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#inputContainer {
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom for better textarea expansion */
+  flex: 1;
+  background: linear-gradient(145deg, #1a1a1a, #141414);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 800px;
+  margin: 0 auto 1rem auto; /* Reduced bottom margin */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#inputContainer:focus-within {
+  border-color: var(--color-primary);
+  background: linear-gradient(145deg, #1f1f1f, #1a1a1a);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+#userInput {
+  flex: 1;
+  padding: 0.75rem 3rem 0.75rem 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-height: 40px;
+  max-height: 200px; /* Increased max-height for more expansion */
+  resize: none; /* Disable manual resize */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+#rightIconGroup {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #inputContainer {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  #userInput {
+    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}

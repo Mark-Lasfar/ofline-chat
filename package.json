@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@capacitor-community/http": "^1.4.1",
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/app": "^7.1.0",
+    "@capacitor/browser": "^7.0.2",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/filesystem": "^7.1.4",
+    "@capacitor/local-notifications": "^7.0.0",
+    "@capacitor/preferences": "^7.0.2",
+    "aos": "^2.3.4",
+    "audio-decode": "^2.2.3",
+    "capacitor-voice-recorder": "^7.0.6",
+    "mespeak": "^2.0.2",
+    "onnxruntime-web": "^1.23.0",
+    "tts.js": "^0.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6"
+  }
+}

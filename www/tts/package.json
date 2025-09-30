@@ -1,0 +1,19 @@
+{
+	"name": "tts.js",
+	"version": "0.1.0",
+	"author": "Liscon Lee <licson0729@gmail.com>",
+	"description": "tts.js is a Text-To-Speech compiled from eSpeak using Emscripten and it supports multiple languages.",
+	"keywords": [
+		"tts",
+		"Text-To-Speech",
+		"espeak",
+		"speak"
+	],
+	"readmeFilename": "README.md",
+	"dependencies": {},
+	"engines": {
+		"node": ">= 0.6.x",
+		"npm": ">= 1.0.x"
+	},
+	"main": "tts"
+}
